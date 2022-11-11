@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=p., initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e6543266a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/css/tailwind.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <title>Log in</title>
+</head>
+
+<body>
+    <div class="search-modal hidden fixed h-[100vh] w-[100vw] bg-black bg-opacity-50 top-0 left-0 z-10"></div>
+    <header class="transition-all w-full bg-white fixed z-20 py-2 top-0">
+        <div class="header-wrap max-w-6xl flex mx-auto items-center justify-between">
+            <a href="../index.html" class="header-logo shrink-0">
+                <img src="/public/img/logo.png" height="80px" width="80px" alt="">
+            </a>
+            <div class="header-navbar flex-1 mx-5 ">
+                <ul class="navbar-list flex justify-center items-center h-full w-full ">
+                    <a href="../list-item/items.html" class="navbar-item text-[16px] font-medium p-3 relative">Men</a>
+                    <a href="../list-item/items.html" class="navbar-item text-[16px] font-medium p-3 relative">Women</a>
+                    <a href="../list-item/items.html" class="navbar-item text-[16px] font-medium p-3 relative">Kids</a>
+                    <a href="../list-item/items.html" class="navbar-item text-[16px] font-medium p-3 relative">Classic</a>
+                    <a href="../list-item/items.html" class="navbar-item text-[16px] font-medium p-3 relative">New Article</a>
+                </ul>
+            </div>
+            <div class="transition-all header-search w-[200px] h-12 rounded-full bg-[#f5f5f5] flex justify-between">
+                <input placeholder="Search"
+                    class="transition-all h-full rounded-full px-4 w-[calc(100%-56px)] flex-1 bg-[#f5f5f5] outline-none">
+                <div onclick="searchItem()"
+                    class="transition-all w-[48px] h-full rounded-full bg-[#f5f5f5]  flex justify-center items-center">
+                    <i class="fa-solid fa-magnifying-glass text-[16px]"></i></input>
+                </div>
+            </div>
+            <div
+                class="search-exit shrink-0 mx-4 hidden h-[40px] w-[40px] justify-center items-center rounded-full bg-[#f5f5f5] cursor-pointer hover:bg-[#e5e5e5]">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="relative">
+                <a href="../cart/cart.html"
+                    class=" header-cart relative p-3 rounded-full flex justify-center items-center mx-4">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="cart-notify h-[10px] w-[10px] absolute bg-red-500 top-1 right-1 rounded-full hidden">
+                    </div>
+                </a>
+            </div>
+            <div class="form-sign flex">
+                <a href="/public/sign/sign.html?1" class="sign-in text-[16px] font-normal">Sign in</a>
+                <span class="mx-2">I</span>
+                <a href="/public/sign/sign.html?0" class="sign-up text-[16px] font-normal">Sign up</a>
+            </div>
+            <div class="form-account hidden">
+                <div class="flex items-center">
+                    <div class="border border-black rounded-full h-[25px] w-[25px] flex justify-center items-center">
+
+                        <i class="text-[18px]  fa-regular fa-user"></i>
+                    </div>
+                    <p class="user-name ml-2 text-[16px] font-normal">Nguyen Chanh Kiet</p>
+                </div>
+                <span class="mx-2">I</span>
+                <p class="text-[16px] font-normal cursor-pointer" onclick="signOut()">Sign out</p>
+            </div>
+            <div class="menu-bar hidden">
+                <div
+                    class="menu-bar-icon flex justify-center items-center cursor-pointer hover:bg-gray-300 rounded-full w-[38px] h-[38px]">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="hidden overscroll-contain overflow-y-scroll overlay inset-0 fixed bg-black opacity-30">
+                </div>
+                <div
+                    class="menu-bar-main h-[100vh] w-[320px] bg-white fixed top-0 right-[-500px] py-3 transition-all duration-500 flex flex-col">
+                    <div class="flex text-[30px] justify-end mr-4 "><i
+                            class="menu-bar-exit cursor-pointer hover:opacity-70 fa-solid fa-xmark"></i></div>
+                    <ul class="content mt-3">
+                        <a href="../list-item/items.html"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Men<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="../list-item/items.html"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Women<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="../list-item/items.html"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Kids<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="../list-item/items.html"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Classic<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="../list-item/items.html" 
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            New
+                            Article<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                    </ul>
+                    <div class="mobile-sign flex flex-col px-4 mt-auto">
+                        <a href="/public/sign/sign.html?1"
+                            class="text-center transition-all border border-black rounded-full mt-4 py-2 hover:bg-gray-800 hover:text-white">Sign
+                            in</a>
+                        <a href="/public/sign/sign.html?0"
+                            class="text-center transition-all border border-black rounded-full mt-4 py-2 hover:bg-gray-800 hover:text-white">Sign
+                            up</a>
+                    </div>
+                    <div class="mobile-account p-4 hidden mt-auto">
+                        <div class="flex items-center justify-center">
+                            <div
+                                class="border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center">
+                                <i class="text-[22px]  fa-regular fa-user"></i>
+                            </div>
+                            <p class="user-name ml-2 text-[18px] font-normal">Nguyen Chanh Kiet</p>
+                        </div>
+                        <button
+                            class="transition-all w-full border border-black rounded-full mt-4 py-2 hover:bg-gray-800 hover:text-white">Sign
+                            out</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+    <div class="sign-in-form pt-[100px] main w-full min-h-[calc(100vh-90px-64px)] bg-[url('/public/img/loginwall.png')] bg-cover relative flex justify-center items-center py-5">
+        <div class="absolute h-full w-full bg-black bg-opacity-50"></div>
+        <div class="relative px-10 py-5 w-[400px] bg-white rounded-3xl flex flex-col items-center">
+            <h1 class="text-[22px] font-bold    ">LOGIN</h1>
+            <p>please enter your login and password</p>
+            <div class="mt-10 w-full">
+                <div class="user w-full">
+                    <input class="px-4 py-3 border border-[#111] rounded-full w-full" type="text" placeholder="Username">
+                </div>
+                
+                <div class="pass mt-5">
+                    <input class="px-4 py-3 border border-[#111] rounded-full w-full" type="password" placeholder="Password">
+                </div>
+            </div>
+            <a class="ml-auto text-[14px]" href="">Forgot password?</a>
+            <p class="fail-login-noti text-red-600 text-[14px] pl-5 pt-2 hidden">Email or password is not correct!</p>
+
+            <p class=" text-center text-[12px] px-5 mt-5">By logging in, you agree to Nike's <a href="" class="">Privacy Policy </a> and <a href="">Terms of Use</a>.</p>
+            <button class="my-10 login-btn border-[#111] rounded-full border px-5 py-2 min-w-[100px] transition-all hover:bg-gray-800 hover:text-white" onclick="signIn()">Login</button>
+            <p class="">Not a member? <a href="./sign.html?0" class="underline">Join Us</a></p>
+        </div>
+    </div>
+    <div class="sign-up-form pt-[100px] main w-full min-h-[calc(100vh-90px-64px)] bg-[url('/public/img/loginwall.png')] bg-cover relative flex justify-center items-center py-5">
+        <div class="absolute h-full w-full bg-black bg-opacity-50"></div>
+        <div class="relative px-10 py-5 w-[400px] bg-white rounded-3xl flex flex-col items-center">
+            <h1 class="text-[22px] font-bold ">BECOME A MEMBER</h1>
+            <p class="text-center text-[14px]">Create your accout profile and get first access to the very best of KHAM products, inspiration and community.</p>
+            <div class="mt-10 w-full">
+                <div class="email mt-5">
+                    <input class="px-4 py-3 border border-[#111] rounded-full w-full" type="text" placeholder="Email">
+                    <p class="valid-email text-red-600 text-[12px] pl-5 hidden"></p>
+
+                </div>
+                <div class="pass mt-5">
+                    <input class="px-4 py-3 border border-[#111] rounded-full w-full" type="password" placeholder="Password">
+                    <p class="valid-pass text-red-600 text-[12px] pl-5 hidden"></p>
+
+                </div>
+                <div class="name mt-5">
+                    <input class="px-4 py-3 border border-[#111] rounded-full w-full" type="text" placeholder="Name">
+                    <p class="valid-name text-red-600 text-[12px] pl-5 hidden"></p>
+
+                </div>
+                <div class="dob mt-5">
+                    <input class="px-4 py-3 border border-[#111] rounded-full w-full" type="date" placeholder="Date Of Birth">
+                    <p class="valid-dob text-red-600 text-[12px] pl-5 hidden"></p>
+
+                </div>
+                <div class="gender mt-5">
+                    <input class="h-4 w-4" name="gender" type="radio"><span class="text-[18px] ml-2">Male</span>
+                    <input class="h-4 w-4 ml-5" name="gender" type="radio"><span class="text-[18px] ml-2">Female</span>
+                    <p class="valid-gender text-red-600 text-[12px] pl-5 hidden"></p>
+                </div>
+                
+            </div>
+            <div class="">  
+                <div class="term w-full mt-5 flex items-center">
+                    <input type="checkbox" class=" h-10 w-10 block mr-2"> 
+                    <span class="text-[14px]" >up for emails to get updates from Nike on products, offers and your Member benefits</span> 
+                </div>
+                <p class="valid-term text-red-600 text-[12px] pl-5 hidden"></p>
+            </div>
+            <button class="my-10 login-btn border-[#111] rounded-full border px-5 py-2 min-w-[100px] transition-all hover:bg-gray-800 hover:text-white" onclick="signUp()">JOIN US</button>
+            <p class="">Already a member <a href="./sign.html?1" class="underline">Sign in</a></p>
+        </div>
+    </div>
+    <footer class="first-footer py-[60px] bg-[#fff]">
+        <div class="first-footer-contain max-w-6xl mx-auto flex justify-between ">
+            <ul class="products-list">
+                <p class="text-[18px] font-semibold">PRODUCTS</p>
+                <li>Shoes</li>
+                <li>Accessories</li>
+                <li>Release Dates</li>
+                <li>Top Sellers</li>
+
+            </ul>
+            <ul class="sports-list">
+                <p class="text-[18px] font-semibold">SPORTS</p>
+                <li>Running</li>
+                <li>Golf</li>
+                <li>Gym & Training</li>
+                <li>Football</li>
+                <li>Basketball</li>
+
+            </ul>
+            <ul class="company-list">
+                <p class="text-[18px] font-semibold">COMPANY INFO</p>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Press</li>
+            </ul>
+            <ul class="support-list">
+                <p class="text-[18px] font-semibold">SUPPORT</p>
+                <li>Help & Customer</li>
+                <li>Service</li>
+                <li>Payment</li>
+                <li>Delivery</li>
+            </ul>
+            <ul class="follow-list">
+                <p class="text-[18px] font-semibold">FOLLOW US</p>
+                <div class="flex flex-col text-[20px]">
+                    <i class="my-2 fa-brands fa-facebook"></i>
+                    <i class="my-2 fa-brands fa-instagram"></i>
+                    <i class="my-2 fa-brands fa-google"></i>
+                    <i class="my-2 fa-brands fa-linkedin"></i>
+                </div>
+            </ul>
+        </div>
+
+    </footer>
+    <footer class="second-footer py-[20px] bg-[#363738] flex justify-center items-center">
+        <div class="policy flex text-white">
+            <p class="policy-item mr-8 relative">Privacy Policy</p>
+            <p class="policy-item mr-8 relative">Terms and Conditions</p>
+            <p class="policy-item mr-8 relative">Imprint</p>
+            <p class="policy-item relative">© 2020 adidas Vietnam Company Limited</p>
+        </div>
+    </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="./handlehtml.js"></script>
+<script src="./validate.js"></script>
+<script src="./customer.js"></script>
+<script src="sign.js"></script>
+
+</html>

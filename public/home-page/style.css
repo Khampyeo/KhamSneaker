@@ -1,0 +1,328 @@
+html{
+    font-family: 'Roboto',sans-serif;
+    color: #111;
+}
+
+
+/* HEADER */
+.header-logo img{
+    cursor: pointer;
+}
+
+.header-navbar .navbar-item{
+    cursor: pointer;
+}
+.header-navbar .navbar-item::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    background-color: #111;
+    left: 0;
+    display: none;
+}
+.header-navbar .navbar-item:hover::after{
+    display: block;
+}
+.header-search:hover,.header-search:hover input, .header-search:hover div{
+    background-color: #e5e5e5;
+}
+
+.header-cart:hover{
+    background-color: #e5e5e5;
+    cursor: pointer;
+
+}
+.form-sign a:hover{
+    opacity: 0.8;
+}
+.search-exit{
+    animation: Appear 0.3s linear; 
+}
+/*  */
+/* TYPE */
+.type-item{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.type-item div{
+    transition:  0.2s ease-in;
+}
+.type-item:hover{
+    transform: translateY(0px);
+}
+.type-item:hover div{
+    transform: translateX(100%);
+}
+.type-item:hover .type-logo{
+    display: none;
+}
+/*  */
+/* VIDEO */
+.video-btn{
+    transition: 0.3s;
+}
+.video-btn:hover{
+    background-color: #757575;
+
+}
+
+/*  */
+.policy-item::after{
+    content: "";
+    height: 20px;
+    width: 1px;
+    background-color: white;
+    position: absolute;
+    left: 100%;
+    transform: translateX(16px);
+}
+.policy-item:last-child:after{
+    display: none;
+}
+/* What news */
+.view-more-btn::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 1px solid #111;
+    left: 4px;
+    
+    top: 4px;
+}
+
+.view-more-btn:hover{
+    color: rgb(204, 204, 204);
+    padding: 14px 10px;
+}
+/* SIGN UP */
+.sign-up .sign-up-btn::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 3px solid #111;
+    left: 8px;
+    top: 8px;
+}
+.sign-up .sign-up-btn:hover{
+    color: rgb(204, 204, 204);
+    height: 64px;
+    padding: 0 22px;
+
+}
+
+
+/* who-are-you */
+.who-are-you .who-title::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    left: 0;
+    top: 100%;
+}
+
+.news .news-title::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    left: 0;
+    top: 100%;
+}
+/* NEWS */
+.news-list li{
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* .news-list li:hover{
+    transform: translateY(0px);
+} */
+/*  */
+/* WHO ARE YOU */
+.who-item{
+    transition: 0.3s;
+}
+.who-item div{
+    transition: 0.3s;
+}
+.who-item:hover{
+    cursor: pointer;
+    transform: translateY(-8px);
+}
+.who-item:hover div{
+    transform: translateX(100%);
+}
+
+/* overlay */
+
+/*  */
+@keyframes Appear {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+    header{
+        padding: 0 10px;
+    }
+    .main{
+        padding: 0 10px;
+    }
+    .header-search{
+         width: 150px
+  }
+  .navbar-list li{
+    font-size: 15px;
+  }
+    .title-main{
+        font-size: 50px;
+        padding: 0 40px;
+    }
+    .type .type-item{
+        height: 250px;
+    }
+    .introduce{
+        padding: 100px 0;
+    }
+    .introduce h1{
+        font-size: 22px;
+    }
+    .news-title{
+        font-size: 40px;
+    }
+    .who-are-you{
+        padding: 50px 0;
+    }
+    .who-title{
+        font-size: 40px;
+    }
+    .main .sign-up{
+        margin: 0 -10px;
+    }
+    footer{
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .title-main{
+        font-size: 30px;
+        padding: 0 40px;
+    }
+    .type-list{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        gap: 5px;
+    }
+    .type .type-item{
+        width: 100%;
+        border: 1px solid black;
+    }
+    .type .type-item:hover{
+        transform: translateY(0);
+    }
+    .type .type-item img:first-child{
+        height: 200px;
+        width: 200px;
+    }
+    .introduce{
+        margin-top: 20px;
+        padding: 60px 0;
+    }
+
+    .introduce h1{
+        font-size: 18px;
+        margin: 0 20px;
+    }
+    .video-content h1{
+        font-size: 20px;
+    }
+    .news-title{
+        font-size: 30px;
+    }
+    .who-are-you{
+        padding: 40px 0;
+    }
+    .who-title{
+        font-size: 30px;
+    }
+    .sign-up{
+        padding: 60px 20px;
+        margin: 0 -10px;
+    }
+    .sign-up .sign-up-btn{
+        font-size: 12px;        
+    }
+    .sign-up .sign-up-btn::after{
+        display: none;
+    }
+    .who-item h1{
+        font-size: 20px;
+    }
+    footer{
+        padding: 0 10px;
+    }
+    .second-footer{
+        justify-content: flex-start;
+    }
+    .second-footer div{
+        flex-direction: column;
+    }
+    .first-footer-contain{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    .follow-list{
+        grid-column: 2 / span 2;
+    }
+    .follow-list div{
+        flex-direction: row;
+    }
+    
+    .follow-list div i{
+        margin-right: 10px;
+    }
+    .first-footer-contain p{
+        font-size: 16px;
+    }
+    .first-footer-contain li{
+        font-size: 14px;
+    }
+    .second-footer div .policy-item{
+        margin-top: 10px;
+    }
+    
+    .second-footer div .policy-item::after{
+        display: none;
+    }
+
+    /* Header  */
+    .header-navbar{
+        display: none;
+    }
+    .header-search{
+        margin-left: auto;
+    }
+    .form-sign{
+        display: none;
+    }
+    .form-account{
+        display: none;
+    }
+    .menu-bar{
+        display: block;
+    }
+}
+

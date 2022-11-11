@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=p., initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e6543266a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="/public/home-page/style.css">
+    <title>Kham</title>
+</head>
+
+<body>
+
+    <div class="search-modal hidden fixed h-[100vh] w-[100vw] bg-black bg-opacity-50 top-0 left-0 z-10"></div>
+    <header class="transition-all w-full bg-white fixed z-20 py-2 top-0">
+        <div class="header-wrap max-w-6xl flex mx-auto items-center justify-between">
+            <a href="" class="header-logo shrink-0">
+                <img src="/public/img/logo.png" height="80px" width="80px" alt="">
+            </a>
+            <div class="header-navbar flex-1 mx-5 ">
+                <ul class="navbar-list flex justify-center items-center h-full w-full ">
+                    <a href="./list-item/items.html?gender=male" class="navbar-item text-[16px] font-medium p-3 relative">Men</a>
+                    <a href="./list-item/items.html?gender=female" class="navbar-item text-[16px] font-medium p-3 relative">Women</a>
+                    <a href="./list-item/items.html?gender=kid" class="navbar-item text-[16px] font-medium p-3 relative">Kids</a>
+                    <a href="./list-item/items.html" class="navbar-item text-[16px] font-medium p-3 relative">Classic</a>
+                    <a href="./list-item/items.html" class="navbar-item text-[16px] font-medium p-3 relative">New Article</a>
+                </ul>
+            </div>
+            <div class="transition-all header-search w-[200px] h-12 rounded-full bg-[#f5f5f5] flex justify-between">
+                <input placeholder="Search"
+                    class="transition-all h-full rounded-full px-4 w-[calc(100%-56px)] flex-1 bg-[#f5f5f5] outline-none">
+                <div onclick="searchItem()"
+                    class="transition-all w-[48px] h-full rounded-full bg-[#f5f5f5]  flex justify-center items-center">
+                    <i class="fa-solid fa-magnifying-glass text-[16px]"></i></input>
+                </div>
+            </div>
+            <div
+                class="search-exit shrink-0 mx-4 hidden h-[40px] w-[40px] justify-center items-center rounded-full bg-[#f5f5f5] cursor-pointer hover:bg-[#e5e5e5]">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="relative">
+                <a href="./cart/cart.html"
+                    class=" header-cart relative p-3 rounded-full flex justify-center items-center mx-4">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="cart-notify h-[10px] w-[10px] absolute bg-red-500 top-1 right-1 rounded-full hidden">
+                    </div>
+                </a>
+            </div>
+            <div class="form-sign flex">
+                <a href="/public/sign/sign.html?1" class="sign-in text-[16px] font-normal">Sign in</a>
+                <span class="mx-2">I</span>
+                <a href="/public/sign/sign.html?0" class="sign-up text-[16px] font-normal">Sign up</a>
+            </div>
+            <div class="form-account hidden">
+                <div class="flex items-center">
+                    <div class="border border-black rounded-full h-[25px] w-[25px] flex justify-center items-center">
+
+                        <i class="text-[18px]  fa-regular fa-user"></i>
+                    </div>
+                    <p class="user-name ml-2 text-[16px] font-normal">Nguyen Chanh Kiet</p>
+                </div>
+                <span class="mx-2">I</span>
+                <p class="text-[16px] font-normal cursor-pointer" onclick="signOut()">Sign out</p>
+            </div>
+            <div class="menu-bar hidden">
+                <div
+                    class="menu-bar-icon flex justify-center items-center cursor-pointer hover:bg-gray-300 rounded-full w-[38px] h-[38px]">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="hidden overscroll-contain overflow-y-scroll overlay inset-0 fixed bg-black opacity-30">
+                </div>
+                <div
+                    class="menu-bar-main h-[100vh] w-[320px] bg-white fixed top-0 right-[-500px] py-3 transition-all duration-500 flex flex-col">
+                    <div class="flex text-[30px] justify-end mr-4 "><i
+                            class="menu-bar-exit cursor-pointer hover:opacity-70 fa-solid fa-xmark"></i></div>
+                    <ul class="content mt-3">
+                        <a href="./list-item/items.html?gender=male"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Men<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="./list-item/items.html?gender=female"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Women<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="./list-item/items.html?gender=kid"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Kids<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="./list-item/items.html"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            Classic<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                        <a href="./list-item/items.html"
+                            class="text-[22px] py-2 px-4 transition-all text-black flex justify-between items-center hover:bg-[#e8e8e8]">
+                            New
+                            Article<i class="text-[16px] fa-solid fa-chevron-right"></i></a>
+                    </ul>
+                    <div class="mobile-sign flex flex-col px-4 mt-auto">
+                        <a href="/public/sign/sign.html?1" class="text-center transition-all border border-black rounded-full mt-4 py-2 hover:bg-gray-800 hover:text-white">Sign in</a>
+                        <a href="/public/sign/sign.html?0" class="text-center transition-all border border-black rounded-full mt-4 py-2 hover:bg-gray-800 hover:text-white">Sign up</a>
+                    </div>
+                    <div class="mobile-account p-4 hidden mt-auto">
+                        <div class="flex items-center justify-center">
+                            <div
+                                class="border border-black rounded-full h-[40px] w-[40px] flex justify-center items-center">
+                                <i class="text-[22px]  fa-regular fa-user"></i>
+                            </div>
+                            <p class="user-name ml-2 text-[18px] font-normal">Nguyen Chanh Kiet</p>
+                        </div>
+                        <button class="transition-all w-full border border-black rounded-full mt-4 py-2 hover:bg-gray-800 hover:text-white" onclick="signOut()">Sign out</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </header>
+    <div class="main mt-10">
+        <div class="w-full text-center max-w-6xl mx-auto py-[80px]">
+            <h1 class="title-main text-[64px] font-bold">DISCOVER LIMITED SNEAKERS WITHOUT LIMITATION</h1>
+        </div>
+        <div class="type w-full max-w-6xl mx-auto ">
+            <div class="type-list flex justify-center content-center">
+                <div
+                    class="type-item w-[calc(100%/4)] h-[300px] flex justify-center relative border border-black overflow-hidden">
+                    <img class="w-[300px] h-[300px] " src="/public/img/converse.png" alt="">
+                    <div class="absolute w-[calc(100%)] h-[300px] bg-opacity-25 bg-black"></div>
+                    <img class="type-logo absolute h-[140px] top-1/2 translate-y-[-50%]"
+                        src="/public/img/Converse-Logo-PNG-2011-–-2017.png" alt="">
+                </div>
+                <div
+                    class="type-item w-[calc(100%/4)] h-[300px] flex justify-center relative border border-l-0 border-black overflow-hidden">
+                    <img class="w-[300px] h-[300px]" src="/public/img/vans.png" height="300" width="300" alt="">
+                    <div class="absolute w-[calc(100%)] h-[300px] bg-opacity-25 bg-black"></div>
+                    <img class="type-logo absolute h-[60px] top-1/2 translate-y-[-50%]"
+                        src="/public/img/logo-de-vans-1536x595.png" alt="">
+
+                </div>
+                <div
+                    class="type-item w-[calc(100%/4)] h-[300px] flex justify-center relative border border-l-0 border-black overflow-hidden">
+                    <img class="w-[300px] h-[300px]" src="/public/img/adidas.png" height="300" width="300" alt="">
+                    <div class="absolute w-[calc(100%)] h-[300px] bg-opacity-25 bg-black"></div>
+                    <img class="type-logo absolute h-[100px] top-1/2 translate-y-[-50%]"
+                        src="/public/img/Adidas_Logo.svg.png" alt="">
+
+                </div>
+                <div
+                    class="type-item w-[calc(100%/4)] h-[300px] flex justify-center relative border border-l-0 border-black overflow-hidden">
+                    <img class="w-[300px] h-[300px]" src="/public/img/nike-shoe.png" height="300" width="300" alt="">
+                    <div class="absolute w-[calc(100%)] h-[300px] bg-opacity-25 bg-black"></div>
+                    <img class="type-logo absolute h-[100px] top-1/2 translate-y-[-50%]"
+                        src="/public/img/Nike-PNG-Image-18401.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="introduce py-[160px] bg-[#111]  max-w-6xl mx-auto">
+            <div class="text-white font-bold text-[26px] leading-relaxed text-center">
+                <h1 class="mx-40">KHAM SNEAKERS is subgenre of streetwear
+                    culture-a clothing style that emerged from Californian surf and skateboard lifestyle. Hypebeast
+                    generally refers to a person who is devoted to accquiring fashionable items, especially clothing and
+                    shoes. To satisfy your fashion need. KHAM SNEAKERS are here. The one and only place with dozens of
+                    high-end, street wear, fashionable sneaker brands come are here waiting for you to Cop 'em dowb!
+                    <br>From
+                    70's to Travis. We got you all covered.
+                </h1>
+            </div>
+        </div>
+        <div class="relative max-w-6xl mx-auto">
+            <video class="w-full h-auto max-w-6xl mx-auto" autoplay loop muted
+                src="/public/img/y2mate.com - Vessi CGI Animation_1080p.mp4"></video>
+            <div class="absolute w-full h-full bg-black bg-opacity-25 top-0 left-0"></div>
+            <div class="video-content text-center py-[80px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+                <p class="">Just In: Fast Pack</p>
+                <h1 class="text-[80px] font-bold">FIND YOUR FAST</h1>
+                <p class="">So many want to fly. Choose yours</p>
+                <button class="video-btn mt-5 w-[120px] rounded-full px-2 py-2 bg-[#111] text-white">Shop All</button>
+            </div>
+        </div>
+        <div class="news max-w-6xl mx-auto py-[80px] relative">
+            <div class="my-5 flex items-end justify-between">
+                <h1 class="news-title font-bold text-[60px] relative inline-block">WHAT NEWS</h1>
+                <button class="view-more-btn text-white bg-[#111] px-2 py-3 font-bold relative">VIEW MORE</button>
+            </div>
+            <ul class="news-list -mx-2 mt-10">
+                <li class="w-[300px] border border-[#111] mx-2 ">
+                    <div class="flex justify-between py-3 px-2">
+                        <img src="/public/img/Logo_NIKE.svg-black.png" alt="" class="logo h-[20px]">
+                        <p class="price font-bold text-[18px]">$239.00</p>
+                    </div>
+                    <div class="flex justify-center items-center h-[380px] border border-x-0 border-[#111]">
+
+                        <img class="" src="/public/img/item1.png" alt="">
+                    </div>
+                    <div class="py-3 px-2">
+                        <h1 class="name font-bold text-[20px]">Jordan 1 Low "Grey Navy"</h1>
+                        <p class="sub text-[14px] text-[#545454]">Nike Air Jordan 1 Low ‘French Blue’</p>
+                    </div>
+                </li>
+                <li class="w-[300px] border border-[#111] mx-2 ">
+                    <div class="flex justify-between py-3 px-2">
+                        <img src="/public/img/Logo_NIKE.svg-black.png" alt="" class="logo h-[20px]">
+                        <p class="price font-bold text-[18px]">$119.00</p>
+                    </div>
+                    <div class="flex justify-center items-center h-[380px] border border-x-0 border-[#111]">
+
+                        <img class="" src="/public/img/item2.png" alt="">
+                    </div>
+                    <div class="py-3 px-2">
+                        <h1 class="name font-bold text-[20px]">Nike Air Force 1 Ocean</h1>
+                        <p class="sub text-[14px] text-[#545454]">Nike Air New Summer 2022</p>
+                    </div>
+                </li>
+                <li class="w-[300px] border border-[#111] mx-2">
+                    <div class="flex justify-between py-3 px-2 ">
+                        <img src="/public/img/Logo_NIKE.svg-black.png " alt="" class="logo h-[20px] ">
+                        <p class="price font-bold text-[18px]">$219.00</p>
+                    </div>
+                    <div class="flex justify-center items-center h-[380px] border border-x-0 border-[#111]">
+
+                        <img class="" src="/public/img/item3.png" alt="">
+                    </div>
+                    <div class="py-3 px-2">
+                        <h1 class="name font-bold text-[20px]">Nike Air Force 1 Snowm</h1>
+                        <p class="sub text-[14px] text-[#545454]">Nike Air New Winter 2020</p>
+                    </div>
+                </li>
+                <li class="w-[300px] border border-[#111] mx-2 ">
+                    <div class="flex justify-between py-3 px-2 ">
+                        <img src="/public/img/Converse-Logo-black.png" alt="" class="logo h-[30px]">
+                        <p class="price font-bold text-[18px]">$179.00</p>
+                    </div>
+                    <div class="flex justify-center items-center h-[380px] border border-x-0 border-[#111]">
+
+                        <img class="" src="/public/img/item4.png" alt="">
+                    </div>
+                    <div class="py-3 px-2">
+                        <h1 class="name font-bold text-[20px]">Converse Chunky </h1>
+                        <p class="sub text-[14px] text-[#545454]">Full Black High Neck</p>
+                    </div>
+                </li>
+                <li class="w-[300px] border border-[#111] mx-2 ">
+                    <div class="flex justify-between py-3 px-2">
+                        <img src="/public/img/vans-log-black.png" alt="" class="logo h-[20px]">
+                        <p class="price font-bold text-[18px]">$309.00</p>
+                    </div>
+                    <div class=" flex justify-center items-center h-[380px] border border-x-0 border-[#111]">
+                        <img class="" src="/public/img/item5.png" alt="">
+
+                    </div>
+                    <div class="py-3 px-2">
+                        <h1 class="name font-bold text-[20px]">Vans Old School "Pink"</h1>
+                        <p class="sub text-[14px] text-[#545454]">Vans Old School From 1970's</p>
+                    </div>
+                </li>
+                <li class="w-[300px] border border-[#111] mx-2 ">
+                    <div class="flex justify-between py-3 px-2">
+                        <img src="/public/img/Adidas_Logo-black.png" alt="" class="logo h-[30px]">
+                        <p class="price font-bold text-[18px]">$219.00</p>
+                    </div>
+                    <div class="flex justify-center items-center h-[380px] border border-x-0 border-[#111]">
+                        <img class="" src="/public/img/item7.png" alt="">
+                    </div>
+                    <div class="py-3 px-2">
+                        <h1 class="name font-bold text-[20px]">Adidas "Grey Lion"</h1>
+                        <p class="sub text-[14px] text-[#545454]">Adidas Sneaker for sport</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="who-are-you max-w-6xl mx-auto py-[80px]">
+            <h1 class="who-title font-bold text-[60px] my-5 relative inline-block">WHO ARE YOU?</h1>
+            <div class="grid grid-cols-3 gap-x-2">
+                <div class="who-item relative overflow-hidden">
+                    <img src="/public/img/women.png" alt="">
+                    <div class="absolute w-full h-full bg-opacity-25 bg-black top-0 left-0"></div>
+                    <h1 class="absolute  text-white px-4 py-2 rounded-full bottom-6 left-2 text-[30px] font-semibold">
+                        Women's</h1>
+                </div>
+                <div class="who-item relative overflow-hidden">
+                    <img src="/public/img/men.png" alt="">
+                    <div class="absolute w-full h-full bg-opacity-25 bg-black top-0 left-0"></div>
+                    <h1 class="absolute  text-white px-4 py-2 rounded-full bottom-6 left-2 text-[30px] font-semibold">
+                        Man's</h1>
+                </div>
+                <div class="who-item relative overflow-hidden">
+                    <img src="/public/img/kid.png" alt="">
+                    <div class="absolute w-full h-full bg-opacity-25 bg-black top-0 left-0"></div>
+                    <h1 class="absolute  text-white px-4 py-2 rounded-full bottom-6 left-2 text-[30px] font-semibold">
+                        Kid's</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="sign-up py-[80px] bg-[#ede734] flex justify-center items-center">
+            <div class="max-w-[400px]">
+                <h1 class="text-[32px] font-bold">BECOME A MEMBER & GET 15% OFF</h1>
+            </div>
+            <button class="sign-up-btn bg-[#111] text-white px-5 h-[60px] font-bold relative transition-all">SIGN UP
+                FOR
+                FREE <i class="ml-3 fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    </div>
+    <footer class="first-footer py-[60px] bg-[#fff]">
+        <div class="first-footer-contain max-w-6xl mx-auto flex justify-between ">
+            <ul class="products-list">
+                <p class="text-[18px] font-semibold">PRODUCTS</p>
+                <li>Shoes</li>
+                <li>Accessories</li>
+                <li>Release Dates</li>
+                <li>Top Sellers</li>
+
+            </ul>
+            <ul class="sports-list">
+                <p class="text-[18px] font-semibold">SPORTS</p>
+                <li>Running</li>
+                <li>Golf</li>
+                <li>Gym & Training</li>
+                <li>Football</li>
+                <li>Basketball</li>
+
+            </ul>
+            <ul class="company-list">
+                <p class="text-[18px] font-semibold">COMPANY INFO</p>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Press</li>
+            </ul>
+            <ul class="support-list">
+                <p class="text-[18px] font-semibold">SUPPORT</p>
+                <li>Help & Customer</li>
+                <li>Service</li>
+                <li>Payment</li>
+                <li>Delivery</li>
+            </ul>
+            <ul class="follow-list">
+                <p class="text-[18px] font-semibold">FOLLOW US</p>
+                <div class="flex flex-col text-[20px]">
+                    <i class="my-2 fa-brands fa-facebook"></i>
+                    <i class="my-2 fa-brands fa-instagram"></i>
+                    <i class="my-2 fa-brands fa-google"></i>
+                    <i class="my-2 fa-brands fa-linkedin"></i>
+                </div>
+            </ul>
+        </div>
+
+    </footer>
+    <footer class="second-footer py-[20px] bg-[#363738] flex justify-center items-center">
+        <div class="policy flex text-white">
+            <p class="policy-item mr-8 relative">Privacy Policy</p>
+            <p class="policy-item mr-8 relative">Terms and Conditions</p>
+            <p class="policy-item mr-8 relative">Imprint</p>
+            <p class="policy-item relative">© 2020 adidas Vietnam Company Limited</p>
+        </div>
+    </footer>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="/public/index.js"></script>
+
+</html>
